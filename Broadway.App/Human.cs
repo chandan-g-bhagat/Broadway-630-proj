@@ -15,11 +15,21 @@ namespace Broadway.App
             //pi = 1.14; //not valid
         }
         //variable
-        int j = 10;
+        public int j = 10;
         const double pi = 3.14;
         readonly double e = 2.7;
         //properties
-        int number { get; set; }
+        public int number { get; set; } // properties
+
+        int _numberProp;
+        public int NumberProp
+        {
+            get { return _numberProp; }
+            set { _numberProp = value; }
+        }
+
+        
+
         //methods or functions
         void SomeFunctiuon()
         {
@@ -28,5 +38,64 @@ namespace Broadway.App
         }
        //GC handles all the things, instead we use IDispossable
 
+    }
+
+
+
+
+    public class ScienceSubject
+    {
+        //variable
+        public readonly int fullMarks=20;
+        public readonly int minMarks=10;
+        private int marksObtained=-30;
+
+        public int MarksObtained
+        {
+            get { return marksObtained; }
+            set
+            {
+                if (value<= minMarks)
+                {
+                    marksObtained = minMarks;
+                }
+                else if (value>=fullMarks)
+                {
+                    marksObtained = fullMarks;
+                }
+                else
+                {
+                    marksObtained = value;
+                }
+            }
+        }
+
+        public ScienceSubject()
+        {
+           
+        }
+    }
+
+
+    public class Student
+    {
+        public string FName { get; set; }
+
+        public string LName { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return FName + " " + LName;
+            }
+        }
+    }
+
+    public class StudentNew
+    {
+        public string FName = "";
+        public string LName = "";
+        
     }
 }

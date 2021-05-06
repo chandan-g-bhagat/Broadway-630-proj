@@ -33,11 +33,48 @@ namespace Broadway.App
 
             //DataTypeRepresentation();
 
-            CastingExample();
+            //CastingExample();
+
+            PropertiesExample();
 
             Console.ReadLine();
         }
-        
+        static void PropertiesExample()
+        {
+            ScienceSubject science = new ScienceSubject();
+            science.MarksObtained = -30;
+
+            Console.WriteLine("Marks in science => " + science.MarksObtained);
+
+            Student s = new Student();
+            s.FName = "Subham123";
+            s.LName = "Koirala";
+            Console.WriteLine("Student FullName => " + s.FullName);
+
+            Student s1 = new Student();
+            s1.FName = "Subham";
+            s1.LName = "Koirala";
+            Console.WriteLine("Student FullName => " + s1.FullName);
+
+
+
+
+
+            StudentNew sNew = new StudentNew();
+            sNew.FName = "Saroj";
+            sNew.LName = "Koirala";
+
+            Console.WriteLine("Student FullName => " + sNew.FName+"-"+sNew.LName);
+
+            StudentNew sNew1 = new StudentNew();
+            sNew1.FName = "Saroj";
+            sNew1.LName = "Koirala";
+
+            Console.WriteLine("Student FullName => " + sNew1.FName + "-" + sNew1.LName);
+
+
+        }
+
         static void DataTypeRepresentation()
         {
             int number = 1000;
