@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broadway.App", "Broadway.App\Broadway.App.csproj", "{9825E176-4854-40AF-A4BB-A15ECE3F87DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		QA|Any CPU = QA|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9825E176-4854-40AF-A4BB-A15ECE3F87DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9825E176-4854-40AF-A4BB-A15ECE3F87DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9825E176-4854-40AF-A4BB-A15ECE3F87DB}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{9825E176-4854-40AF-A4BB-A15ECE3F87DB}.QA|Any CPU.Build.0 = QA|Any CPU
+		{9825E176-4854-40AF-A4BB-A15ECE3F87DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9825E176-4854-40AF-A4BB-A15ECE3F87DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41084C1D-21E3-49C5-8FD7-D35A8995B009}
+	EndGlobalSection
+EndGlobal
