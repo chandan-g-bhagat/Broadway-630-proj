@@ -35,10 +35,102 @@ namespace Broadway.App
 
             //CastingExample();
 
-            PropertiesExample();
+
+            string result = "n";
+            do
+            {
+                //PropertiesExample();
+
+                //ForLoopExample();
+
+                ArrayExxample();
+
+                Console.WriteLine("Do you want to repeat it again (y/n)");
+                result = Console.ReadLine();
+            }
+            while (result.ToUpper() == "Y") ;
 
             Console.ReadLine();
         }
+
+        static void ArrayExxample()
+        {
+            //array of int 
+            Console.WriteLine("Array of int");
+            int max = 5;
+            
+            int[] i=new int[max];
+            //total element 1-5
+            //index 0-4
+            i[0] = 10;
+            i[1] = 20;
+            i[2] = 30;
+            i[3] = 40;
+            i[4] = 50;
+
+            //functions of Array
+           // Array.Reverse(i);
+
+            Array.Resize(ref i, i.Length - 1);
+
+            int[] j = new int[5];
+          
+            //i=>0, j=0
+            Array.Copy(i,1, j,0,2);
+
+        }
+
+        static int test()
+        {
+            return 0;
+        }
+
+        static void ForLoopExample()
+        {
+            Console.WriteLine("Enter the text");
+            var str = Console.ReadLine();
+
+            //number i is looped
+            for (int i = 0; i < str.Length; i++)
+            {
+                Console.WriteLine(str[i]);
+                if (str[i] == 'z')
+                {
+                    break;
+                }
+            }
+
+            //continue example
+            //int i = 0;
+            //while (i < 10)
+            //{
+            //    if (i == 4)
+            //    {
+            //        i++;
+            //        continue;
+            //    }
+            //    Console.WriteLine(i);
+            //    i++;
+            //}
+
+            ////str => test
+            //foreach(var item in str)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //int j = 0;
+            //while(j< str.Length)
+            //{
+            //    Console.WriteLine(str[j]);
+            //    j++;
+            //}
+
+
+
+        }
+
+
         static void PropertiesExample()
         {
             ScienceSubject science = new ScienceSubject();
@@ -47,13 +139,13 @@ namespace Broadway.App
             Console.WriteLine("Marks in science => " + science.MarksObtained);
 
             Student s = new Student();
-            s.FName = "Subham123";
-            s.LName = "Koirala";
+            s.Setnames("Subham", "Koirala");
+          
             Console.WriteLine("Student FullName => " + s.FullName);
 
             Student s1 = new Student();
-            s1.FName = "Subham";
-            s1.LName = "Koirala";
+            s1.Setnames("Saroj", "Koirala");
+
             Console.WriteLine("Student FullName => " + s1.FullName);
 
 
@@ -64,13 +156,13 @@ namespace Broadway.App
             sNew.FName = "Saroj";
             sNew.LName = "Koirala";
 
-            Console.WriteLine("Student FullName => " + sNew.FName+"-"+sNew.LName);
+            Console.WriteLine("Student FullName => " + sNew.FName+"."+sNew.LName);
 
             StudentNew sNew1 = new StudentNew();
             sNew1.FName = "Saroj";
             sNew1.LName = "Koirala";
 
-            Console.WriteLine("Student FullName => " + sNew1.FName + "-" + sNew1.LName);
+            Console.WriteLine("Student FullName => " + sNew1.FName + "." + sNew1.LName);
 
 
         }
@@ -134,10 +226,41 @@ namespace Broadway.App
             int intstr = Convert.ToInt32(str);
 
 
-                  }
+        }
+
+        static void BranchingExample()
+        {
+            Console.WriteLine("Enter a character");
+            var data = Console.ReadLine();
+            var character = data[0];
+
+            switch(character)
+            {
+                case 'a':
+                case 'A':
+                    Console.WriteLine("a is a vowel");
+                    break;
+                case 'e':
+                case 'E':
+                    Console.WriteLine("e is a vowel");
+                    break;
+                case 'i':
+                case 'I':
+                    Console.WriteLine("i is a vowel");
+                    break;
+                case 'o':
+                case 'O':
+                    Console.WriteLine("o is a vowel");
+                    break;
+
+
+                default:
+                    break;
+            }
+        }
     }
 
-    
+
 }
 
 

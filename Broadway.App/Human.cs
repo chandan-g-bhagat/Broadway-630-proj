@@ -61,12 +61,27 @@ namespace Broadway.App
                 }
                 else if (value>=fullMarks)
                 {
-                    marksObtained = fullMarks;
+                    marksObtained = minMarks;
                 }
                 else
                 {
-                    marksObtained = value;
+                    marksObtained = minMarks;
                 }
+                
+                
+                // Alternatives of if...else 
+
+                //if (value <= minMarks)
+                //    marksObtained = minMarks;
+                //else if (value >= fullMarks)
+                //    marksObtained = fullMarks;
+                //else
+                //    marksObtained = value;
+
+
+                //// (condition)? true statement : false statement 
+                //marksObtained = (value <= minMarks) ? minMarks : (value >= fullMarks) ? fullMarks : value;
+
             }
         }
 
@@ -79,16 +94,22 @@ namespace Broadway.App
 
     public class Student
     {
-        public string FName { get; set; }
+        private string FName = "";
 
-        public string LName { get; set; }
+        private string LName = "";
 
         public string FullName
         {
             get
             {
-                return FName + " " + LName;
+                return FName + "." + LName;
             }
+        }
+
+        public void Setnames(string firstName, string lastName)
+        {
+            FName = firstName;
+            LName = lastName;
         }
     }
 
