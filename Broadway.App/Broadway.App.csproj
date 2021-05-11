@@ -58,9 +58,16 @@
     <Compile Include="Human.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticClasss.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestClass\TestClass.csproj">
+      <Project>{96195efd-e580-413d-bbf3-5048509f5aaa}</Project>
+      <Name>TestClass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

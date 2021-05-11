@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TestClass;
 namespace Broadway.App
 {
     class Program
@@ -45,7 +45,10 @@ namespace Broadway.App
 
                 //FunctionExecutionExample();
 
-                OperatorOverloadingExample();
+                //OperatorOverloadingExample();
+
+                StaticAndNonStaticExample();
+              
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -53,6 +56,36 @@ namespace Broadway.App
             while (result.ToUpper() == "Y") ;
 
             Console.ReadLine();
+        }
+
+        static void StaticAndNonStaticExample()
+        {
+            //var staticObj = new StaticClasss(); //cannot create object
+            var nonstaticObj = new NonStaticClass();
+            var nonstaticObj1 = new NonStaticClass();
+            var nonstaticObj2 = new NonStaticClass();
+
+            //NonStaticClass.j = 30;
+            //NonStaticClass.StaticFunctionOne();
+
+            //nonstaticObj.i = 40;
+            Console.WriteLine("for nonstaticObj");
+            nonstaticObj.FunctionOne();
+            
+           // nonstaticObj1.i = 41;
+            Console.WriteLine("for nonstaticObj1");
+            nonstaticObj1.FunctionOne();
+
+            //nonstaticObj2.i = 42;
+            Console.WriteLine("for nonstaticObj2");
+            nonstaticObj2.FunctionOne();
+
+            //StaticClasss.i = 20;
+            //StaticClasss.FunctionOne();
+
+            Class1 obj = new Class1();
+            
+            
         }
 
         static void OperatorOverloadingExample()
