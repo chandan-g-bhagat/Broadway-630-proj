@@ -20,8 +20,6 @@ namespace Broadway.App
             //Maths m2 = new Maths();
 
 
-
-
             //Console.WriteLine("I am from .net framework"); // at the end adds a new line
             //Console.Write("Hello, I am Kushal Neupane"); // simply writes
             //var str =Console.ReadLine();
@@ -43,7 +41,11 @@ namespace Broadway.App
 
                 //ForLoopExample();
 
-                ArrayExxample();
+                //ArrayExxample();
+
+                //FunctionExecutionExample();
+
+                OperatorOverloadingExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -51,6 +53,53 @@ namespace Broadway.App
             while (result.ToUpper() == "Y") ;
 
             Console.ReadLine();
+        }
+
+        static void OperatorOverloadingExample()
+        {
+            int a = 20; int b = 30;
+            var res = a + b;
+
+            var aObj = new Arithmetic() { i=35, str="Some "};
+            var bobj = new Arithmetic() { i=45, str="String"};
+            var resObj = aObj + bobj;
+            var resObj1 = aObj + bobj;
+            var resObj2 = aObj + bobj;
+            var resObj3 = aObj + bobj;
+            var resObj4 = aObj + bobj;
+
+
+            Console.WriteLine("Final i => " + resObj.i);
+            Console.WriteLine("Final str => " + resObj.str);
+
+            aObj++;
+
+            Console.WriteLine("Final i => " + aObj.i);
+            Console.WriteLine("Final str => " + aObj.str);
+            
+            
+            aObj = new Arithmetic() { i = 35, str = "Some " };
+            bobj = new Arithmetic() { i = 35, str = "Some " };
+
+            var cObj = new Arithmetic() { i = aObj.i + bobj.i, str = aObj.str + bobj.str , Price=aObj.Price+bobj.Price};
+            var dObj = new Arithmetic() { i = aObj.i + bobj.i, str = aObj.str + bobj.str , Price = aObj.Price + bobj.Price };
+
+            var eObj = new Arithmetic() { i = aObj.i + bobj.i, str = aObj.str + bobj.str , Price = aObj.Price + bobj.Price };
+
+            var result = (aObj == bobj);
+
+            Console.WriteLine("result => " + result); //&& ||
+        }
+
+        static void FunctionExecutionExample()
+        {
+            ScienceSubject ss = new ScienceSubject();
+            //ss.Test(10);
+
+            var a = new Arithmetic();
+
+            var b = new Arithmetic(25);
+           
         }
 
         static void ArrayExxample()

@@ -87,7 +87,22 @@ namespace Broadway.App
 
         public ScienceSubject()
         {
-           
+            
+        }
+
+        public void Test(int a)
+        {
+            if (a==10)
+            {
+                Console.WriteLine("The value is 10");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Value is not 10");
+            }
+
+            Console.WriteLine("Executed Function");
         }
     }
 
