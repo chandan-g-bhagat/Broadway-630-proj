@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Broadway.App.Inheritance;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,8 +48,9 @@ namespace Broadway.App
 
                 //OperatorOverloadingExample();
 
-                StaticAndNonStaticExample();
-              
+                //StaticAndNonStaticExample();
+
+                InheritanceExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -57,6 +59,47 @@ namespace Broadway.App
 
             Console.ReadLine();
         }
+
+        static void InheritanceExample()
+        {
+            var vertibrate = new Vertibrate("Human");
+
+            Console.WriteLine("Type of Vertibrate => " + vertibrate.GetType());
+            vertibrate.VertibratePublicName = "";
+
+            var animalV = (Animal)vertibrate;
+            animalV.publicName = "";
+            animalV.publicLivingThingName = "";
+
+            var livingthingV = (LivingThing)vertibrate;
+            livingthingV.publicLivingThingName = "";
+            
+           // var plant = (Plant)vertibrate;
+
+            var newPlant = new Plant();
+            var plantlivingThing = (LivingThing)newPlant;
+
+            var animal = new Animal();
+            animal.publicName = "TestpublicName";
+            animal.publicLivingThingName = "publicLivingThingName";
+            var animallivingThing = (LivingThing)animal;
+
+
+            LivingThing[] livingThings = new LivingThing[2];
+            livingThings[0] = new LivingThing();
+            livingThings[1] = new Animal();
+            Array.Resize(ref livingThings, livingThings.Length + 2);
+            livingThings[2] = new Vertibrate();
+            livingThings[3] = new Plant();
+
+
+            Animal[] animals = new Animal[3];
+            animals[0] = new Animal();
+            animals[1] = new Vertibrate();
+            //animals[2] = new Plant();
+           
+
+         }
 
         static void StaticAndNonStaticExample()
         {
