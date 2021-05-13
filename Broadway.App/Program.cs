@@ -12,19 +12,19 @@ namespace Broadway.App
         static void Main(string[] args)
         {
 
-            if (args.Length>0)
-            {
-                if (args.Contains("--dev"))
-                {
-                    Console.WriteLine("Developer mode enabled");
-                }
+            //if (args.Length>0)
+            //{
+            //    if (args.Contains("--dev"))
+            //    {
+            //        Console.WriteLine("Developer mode enabled");
+            //    }
 
-            }
-            else
-            {
-                Console.WriteLine("Enter Password");
-                Console.ReadLine();
-            }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Enter Password");
+            //    Console.ReadLine();
+            //}
             // ctrl + k,c => comment
             //ctrl + k,u => uncomment
             //int a = 10;
@@ -68,7 +68,9 @@ namespace Broadway.App
 
                 //PolymorphismExample();
 
-                InertfaceExample();
+                //InertfaceExample();
+
+                ArraysFunction.ArrayExample1();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
