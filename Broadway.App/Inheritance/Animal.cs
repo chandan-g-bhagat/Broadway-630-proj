@@ -21,6 +21,11 @@ namespace Broadway.App.Inheritance
         protected string LivingThingName = "";
         private string privateLivingThingName = "";
         public string publicLivingThingName = "";
+
+        public virtual void PolyFunction()
+        {
+            Console.WriteLine("I am from LivingThing class");
+        }
     }
     public class Animal : LivingThing
     {
@@ -40,6 +45,11 @@ namespace Broadway.App.Inheritance
         public void Test()
         {
             
+        }
+
+        public override void PolyFunction()
+        {
+            Console.WriteLine("I am from animal class");
         }
     }
     public class Vertibrate : Animal
@@ -63,6 +73,11 @@ namespace Broadway.App.Inheritance
             
             //privateName = ""; //not inherited
            
+        }
+
+        public override void PolyFunction()
+        {
+            Console.WriteLine("I am from Vertibrate class");
         }
     }
 

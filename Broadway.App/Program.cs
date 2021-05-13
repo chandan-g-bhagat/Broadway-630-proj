@@ -11,6 +11,20 @@ namespace Broadway.App
     {
         static void Main(string[] args)
         {
+
+            if (args.Length>0)
+            {
+                if (args.Contains("--dev"))
+                {
+                    Console.WriteLine("Developer mode enabled");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Enter Password");
+                Console.ReadLine();
+            }
             // ctrl + k,c => comment
             //ctrl + k,u => uncomment
             //int a = 10;
@@ -50,7 +64,11 @@ namespace Broadway.App
 
                 //StaticAndNonStaticExample();
 
-                InheritanceExample();
+                //InheritanceExample();
+
+                //PolymorphismExample();
+
+                InertfaceExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -58,6 +76,43 @@ namespace Broadway.App
             while (result.ToUpper() == "Y") ;
 
             Console.ReadLine();
+           
+        }
+        static IShape shape;
+        public static void InertfaceExample()
+        {
+            Console.WriteLine("1 for Rectangle\n2 for Square\n3 for Circle");
+            var choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    shape = new Rectangle();
+                    break;
+                case "2":
+                    shape = new Square();
+                    break;
+                case "3":
+                    shape = new Circle();
+                    break;
+                default:
+                    break;
+            }
+            shape.GetInput();
+            shape.Area();
+            shape.Perimeter();
+
+        }
+
+        static void PolymorphismExample()
+        {
+            LivingThing livingObj = new LivingThing();
+            livingObj.PolyFunction();
+
+            LivingThing animalObj = new Animal();
+            animalObj.PolyFunction();
+
+            LivingThing vertibrateObj = new Vertibrate();
+            vertibrateObj.PolyFunction();
         }
 
         static void InheritanceExample()

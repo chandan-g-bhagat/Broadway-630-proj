@@ -57,6 +57,7 @@
     <Compile Include="Arithmetic.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Inheritance\Animal.cs" />
+    <Compile Include="Inheritance\Shapes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticClasss.cs" />
