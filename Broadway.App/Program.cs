@@ -11,20 +11,27 @@ namespace Broadway.App
     {
         static void Main(string[] args)
         {
+            #region arguments demo, Uncomment to use it
 
-            if (args.Length>0)
-            {
-                if (args.Contains("--dev"))
-                {
-                    Console.WriteLine("Developer mode enabled");
-                }
+            //if (args.Length>0)
+            //{
+            //    if (args.Contains("--dev"))
+            //    {
+            //        Console.WriteLine("Developer mode enabled");
+            //    }
 
-            }
-            else
-            {
-                Console.WriteLine("Enter Password");
-                Console.ReadLine();
-            }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Enter Password");
+            //    Console.ReadLine();
+            //}
+
+            #endregion
+
+
+            #region basic things
+
             // ctrl + k,c => comment
             //ctrl + k,u => uncomment
             //int a = 10;
@@ -48,6 +55,7 @@ namespace Broadway.App
 
             //CastingExample();
 
+            #endregion
 
             string result = "n";
             do
@@ -68,7 +76,9 @@ namespace Broadway.App
 
                 //PolymorphismExample();
 
-                InertfaceExample();
+                //InertfaceExample();
+                
+                AbstractExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -78,6 +88,34 @@ namespace Broadway.App
             Console.ReadLine();
            
         }
+
+        static ShapeAbstract shapeAbs; //null
+        static void AbstractExample()
+        {
+            Console.WriteLine("1 for Rectangle\n2 for Square");
+            var choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    shapeAbs = new RectangleAbstract();
+                    break;
+                case "2":
+                    shapeAbs = new SquareAbstract();
+                    break;
+                case "3":
+                    //shape = new Circle();
+                    break;
+                default:
+                    break;
+            }
+            shapeAbs.DisplayIntro();
+
+            shapeAbs.GetInput();
+            shapeAbs.DisplayArea();
+            shapeAbs.DisplayPerimeter();
+        }
+
+
         static IShape shape;
         public static void InertfaceExample()
         {

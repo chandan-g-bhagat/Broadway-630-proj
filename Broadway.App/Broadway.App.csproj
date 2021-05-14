@@ -57,6 +57,7 @@
     <Compile Include="Arithmetic.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Inheritance\Animal.cs" />
+    <Compile Include="Inheritance\ShapeAbstract.cs" />
     <Compile Include="Inheritance\Shapes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +71,9 @@
       <Project>{96195efd-e580-413d-bbf3-5048509f5aaa}</Project>
       <Name>TestClass</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataStructures\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
