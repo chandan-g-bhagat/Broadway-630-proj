@@ -1,4 +1,5 @@
-﻿using Broadway.App.Inheritance;
+﻿using Broadway.App.DataStructures;
+using Broadway.App.Inheritance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,8 +78,10 @@ namespace Broadway.App
                 //PolymorphismExample();
 
                 //InertfaceExample();
-                
-                AbstractExample();
+
+                //AbstractExample();
+
+                CustomStackExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -88,6 +91,25 @@ namespace Broadway.App
             Console.ReadLine();
            
         }
+
+        static void CustomStackExample()
+        {
+            CustomStack cs = new CustomStack(6);
+            cs.Push("Niroj");
+            cs.Push("Pallabi");
+            cs.Push("Ashish");
+            cs.Display();
+
+            cs.Pop();
+            cs.Display();
+            cs.Push("Kushal");
+            cs.Push("Binod");
+            cs.Push("Ashish");
+            cs.Push("Chandan");
+
+            cs.Display();
+        }
+
 
         static ShapeAbstract shapeAbs; //null
         static void AbstractExample()
