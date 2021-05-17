@@ -101,4 +101,41 @@ namespace Broadway.App.DataStructures
             Console.WriteLine();
         }
     }
+
+
+    public class CustomInifiniteStack
+    {
+        private string[] container = new string[0]; //initial container size is 1
+        
+
+        public void Push(string item)
+        {
+            Array.Resize(ref container, container.Length + 1);            
+            //container.Length-1 gives us index
+            container[container.Length-1] = item;
+        }
+
+        public void Pop()
+        {
+            if (container.Length >= 0)
+            {
+                Array.Resize(ref container, container.Length - 1);
+            }
+        }
+
+        public void Display()
+        {
+            Console.WriteLine("Items in stack");
+            for (int i = container.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(container[i]);
+            }
+
+            Console.WriteLine();
+        }
+    }
+
+
+
+  
 }

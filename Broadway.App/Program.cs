@@ -1,5 +1,6 @@
 ﻿using Broadway.App.DataStructures;
 using Broadway.App.Inheritance;
+using Broadway.App.Templates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,7 +82,9 @@ namespace Broadway.App
 
                 //AbstractExample();
 
-                CustomStackExample();
+                //CustomStackExample();
+
+                TemplateExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -92,9 +95,23 @@ namespace Broadway.App
            
         }
 
+        static void TemplateExample()
+        {
+            CustomTemplatedStack<int> intTemp = new CustomTemplatedStack<int>();
+            intTemp.Push(1);
+            CustomTemplatedStack<string> strTemp = new CustomTemplatedStack<string>();
+            strTemp.Push("Ashish");
+            CustomTemplatedStack<double> doubleTemp = new CustomTemplatedStack<double>();
+            doubleTemp.Push(0.001);
+
+            Test tObj = new Test();
+            
+            Test.FunctionOne<CustomStack, int>(new CustomStack(), 1);
+        }
+
         static void CustomStackExample()
         {
-            CustomStack cs = new CustomStack(6);
+            CustomInifiniteStack cs = new CustomInifiniteStack();
             cs.Push("Niroj");
             cs.Push("Pallabi");
             cs.Push("Ashish");
@@ -106,8 +123,14 @@ namespace Broadway.App
             cs.Push("Binod");
             cs.Push("Ashish");
             cs.Push("Chandan");
+            cs.Push("Binod");
+            cs.Push("Ashish");
+            cs.Push("Chandan");
 
             cs.Display();
+
+
+           
         }
 
 
