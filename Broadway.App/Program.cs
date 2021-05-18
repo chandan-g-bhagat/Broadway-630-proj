@@ -84,7 +84,9 @@ namespace Broadway.App
 
                 //CustomStackExample();
 
-                TemplateExample();
+                //TemplateExample();
+
+                PassbyExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -93,6 +95,27 @@ namespace Broadway.App
 
             Console.ReadLine();
            
+        }
+
+        static void PassbyExample()
+        {
+            int i = 20;
+            string str = "test";
+
+           
+            Console.WriteLine("From Object pObj1");
+            PassBy pObj1 = new PassBy();
+            pObj1.PassByOut(i, str, out i, out str);
+           
+
+            Console.WriteLine("From Object pObj2");
+            PassBy pObj2 = new PassBy();
+            pObj2.PassByOut( i,  str, out i, out str);
+
+            Console.WriteLine("From Object pObj3");
+            PassBy pObj3 = new PassBy();
+            pObj3.PassByOut(i, str, out i, out str);
+
         }
 
         static void TemplateExample()
