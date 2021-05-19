@@ -86,7 +86,9 @@ namespace Broadway.App
 
                 //TemplateExample();
 
-                PassbyExample();
+                //PassbyExample();
+
+                EventDelegateExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -95,6 +97,31 @@ namespace Broadway.App
 
             Console.ReadLine();
            
+        }
+
+        static void EventDelegateExample()
+        {
+            ButtonImplClass button = new ButtonImplClass();
+            button.btnObj.ClickEvent += BtnObj_ClickEvent;
+            button.btnObj.ClickEvent += BtnObj_ClickEvent;
+            button.btnObj.ClickEvent += BtnObj_ClickEvent;
+            button.btnObj.ClickEvent += BtnObj_ClickEvent;
+            button.btnObj.ClickEvent += BtnObj_ClickEvent;
+            button.Run(2, 3);
+            Console.WriteLine("\n\nAfter removing");
+            button.btnObj.ClickEvent -= BtnObj_ClickEvent;
+            button.btnObj.ClickEvent -= BtnObj_ClickEvent;
+            button.btnObj.ClickEvent -= BtnObj_ClickEvent;
+            button.btnObj.ClickEvent -= BtnObj_ClickEvent;
+            button.btnObj.ClickEvent -= BtnObj_ClickEvent;
+            button.Run(2, 3);
+
+
+        }
+
+        private static void BtnObj_ClickEvent(int a, int b)
+        {
+            Console.WriteLine("We are running from program class of BtnObj_ClickEvent");
         }
 
         static void PassbyExample()

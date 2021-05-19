@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arithmetic.cs" />
+    <Compile Include="ButtonClass.cs" />
     <Compile Include="DataStructures\CustomStack.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Inheritance\Animal.cs" />
