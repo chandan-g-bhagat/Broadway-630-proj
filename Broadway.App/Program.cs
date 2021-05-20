@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TestClass;
 namespace Broadway.App
@@ -88,7 +89,11 @@ namespace Broadway.App
 
                 //PassbyExample();
 
-                EventDelegateExample();
+                //EventDelegateExample();
+
+                //ThreadingExample();
+
+                TaskExample();
 
                 Console.WriteLine("Do you want to repeat it again (y/n)");
                 result = Console.ReadLine();
@@ -97,6 +102,48 @@ namespace Broadway.App
 
             Console.ReadLine();
            
+        }
+
+        static void ThreadingExample()
+        {
+            var thread = Thread.CurrentThread;
+            thread.Name = "Main Thread";
+            Console.WriteLine("I am from " + thread.Name);
+
+            var task1 = new ThreadStart(ThreadingImpl.FunctionOne);
+            var task2 = new ThreadStart(ThreadingImpl.FunctionTwo);
+            Thread t1 = new Thread(task1);
+            Thread t2 = new Thread(task2);
+            var t3 = new Thread(() =>  ThreadingImpl.FunctionThree("Test") );
+            
+            t1.IsBackground = false;
+            t2.IsBackground = false;
+            t3.IsBackground = false;
+
+            t1.Start();
+            t2.Start();
+            t3.Start();
+            
+
+        }
+
+        static void TaskExample()
+        {
+            var tokenSource = new CancellationTokenSource();
+            
+            Task t1 = new Task(() => ThreadingImpl.TaskOne(), tokenSource.Token);
+            Task t2 = new Task(() => ThreadingImpl.TaskTwo());
+            Task t3 = new Task(() => ThreadingImpl.TaskThree("Tasks"));
+
+            t1.ContinueWith(a => t3.Start());
+            t1.Start();
+            t2.Start();
+
+            Thread.Sleep(7000);
+            tokenSource.Cancel();
+            //tokenSource.CancelAfter(7000);
+
+            
         }
 
         static void EventDelegateExample()
