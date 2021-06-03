@@ -16,71 +16,140 @@ namespace Broadway.DesktopApp
 {
     public partial class MainForm : Form
     {
-        string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BW_630;Integrated Security=True;";
+       
         public MainForm()
         {
             InitializeComponent();
-
-            //LoadData();
-            InitialLoad();
+            LoadData();
         }
 
-        void InitialLoad()
+        void LoadData()
         {
-            StudentModel s1 = new StudentModel();
-            s1.GetAll();
-            dataGridView1.DataSource = s1.Table;
-            dataGridView1.Refresh();
+            //student load and display
+            Student_Model s1 = new Student_Model();
+            s1.GetQuery();
 
-            ParentModel p1 = new ParentModel();
-            p1.GetAll();
-            dataGridView2.DataSource = p1.Table;
-            dataGridView2.Refresh();
+            grdStudent.DataSource = s1.Table;
+            grdStudent.Refresh();
 
-            MenuModel m1 = new MenuModel();
-            m1.GetAll();
-            dataGridView3.DataSource = m1.Table;
-            dataGridView3.Refresh();
-        }
+            //Parent load and display
+            Parent_Model p1 = new Parent_Model();
+            p1.GetQuery();
 
+            grdParent.DataSource = p1.Table;
+            grdParent.Refresh();
+            //Menu load and display
+            Menu_Model m1 = new Menu_Model();
+            m1.GetQuery();
 
-
-       
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
+            grdMenu.DataSource = m1.Table;
+            grdMenu.Refresh();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                StudentModel s1 = new StudentModel();
+                Student_Model s1 = new Student_Model();
                 s1.Name = textBox1.Text;
                 s1.Insert();
 
-                InitialLoad();
+                textBox1.Text = "";
+                LoadData();
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(textBox2.Text))
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                ParentModel p1 = new ParentModel();
-                p1.Name = textBox2.Text;
-                p1.Type = comboBox2.SelectedIndex;
-                p1.Insert();
+                MessageBox.Show("Parent Name is required");
+                return;
+            }
+            
+            if (comboBox2.SelectedItem==null)
+            {
+                MessageBox.Show("Parent type is required");
+                return;
+            }
+                        
+            Parent_Model p1 = new Parent_Model();
+            p1.Name = textBox2.Text;
+            p1.Type = comboBox2.SelectedItem.ToString() == "Father" ? 0 : 1;
+            p1.Insert();
+            textBox2.Text = "";
+            comboBox2.SelectedItem = null;
 
-                InitialLoad();
+            LoadData();
+            
+        }
+
+        private void grdStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+        }
+
+        private void grdStudent_Click(object sender, EventArgs e)
+        {
+            var grid = (DataGridView)sender;
+            var selectedRows = grid.SelectedRows;
+
+            if (selectedRows != null && selectedRows.Count==1)
+            {
+                lblStudentId.Text = selectedRows[0].Cells["Id"].Value.ToString();
+                textBox1.Text = selectedRows[0].Cells["Student"].Value.ToString();
+
+                btn_Update.Visible = true;
+                btn_delete.Visible = true;
+                btn_Create.Visible = false;
+            }
+            else
+            {
+                lblStudentId.Text = "";
+                textBox1.Text = "";
+                btn_Update.Visible = false;
+                btn_delete.Visible = false;
+                btn_Create.Visible = true;
+
             }
         }
-    }
 
-    public class Students //model
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                Student_Model s1 = new Student_Model();
+                s1.Id = Convert.ToInt32(lblStudentId.Text);
+                s1.Name = textBox1.Text;
+                s1.Update();
+
+                textBox1.Text = "";
+                lblStudentId.Text = "";
+                LoadData();
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(lblStudentId.Text))
+            {
+                Student_Model s1 = new Student_Model();
+                s1.Id = Convert.ToInt32(lblStudentId.Text);
+               
+                s1.Delete();
+
+                textBox1.Text = "";
+                lblStudentId.Text = "";
+                LoadData();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuCreateSP sp = new MenuCreateSP();
+            sp.Show();
+        }
     }
+   
 }
