@@ -147,8 +147,8 @@ namespace Broadway.DesktopApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MenuCreateSP sp = new MenuCreateSP();
-            sp.Show();
+            //MenuCreateSP sp = new MenuCreateSP();
+            //sp.Show();
         }
     }
    

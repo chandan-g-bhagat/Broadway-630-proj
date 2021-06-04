@@ -47,7 +47,24 @@ namespace Broadway.DesktopApp
             else
             {
                 MessageBox.Show("Menu Name is Empty");
+                toolStripStatusLabel1.Text = "Menu Name is Empty";
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void MenuCreateSP_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            webBrowser1.Navigate(textBox1.Text);
         }
     }
 }
