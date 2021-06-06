@@ -12,11 +12,10 @@ namespace Broadway.DesktopApp.DbFirst
     using System;
     using System.Collections.Generic;
     
-    public partial class Student
+    public partial class test
     {
-        public int Id { get; set; }
-        public string Student1 { get; set; }
-        public string Email { get; set; }
-        public Nullable<System.DateTime> DOB { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
     }
 }

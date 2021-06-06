@@ -29,5 +29,6 @@ namespace Broadway.DesktopApp.DbFirst
         public virtual DbSet<Parent> Parents { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<SP> SPs { get; set; }
+        public virtual DbSet<test> tests { get; set; }
     }
 }

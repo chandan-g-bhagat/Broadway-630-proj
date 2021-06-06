@@ -25,7 +25,7 @@ namespace Broadway.DesktopApp.Data
         }
 
         //select query
-        public virtual void GetQuery()
+        public virtual void GetAll()
         {
             try
             {
@@ -41,7 +41,7 @@ namespace Broadway.DesktopApp.Data
             }
         }
 
-        public virtual void Insert()
+        public virtual void Create()
         {
             ExecutenonQuery();
         }
@@ -79,16 +79,16 @@ namespace Broadway.DesktopApp.Data
        public string Name { get; set; }
 
 
-        public override void GetQuery()
+        public override void GetAll()
         {
             this.Query = "select * from Student"; 
-            base.GetQuery();
+            base.GetAll();
         }
 
-        public override void Insert()
+        public override void Create()
         {
             this.Query = $"Insert into student (Student) values ('{this.Name}')";
-            base.Insert();
+            base.Create();
         }
 
         public override void Update()
@@ -109,26 +109,26 @@ namespace Broadway.DesktopApp.Data
     {
         public string Name { get; set; }
         public int Type { get; set; }
-        public override void GetQuery()
+        public override void GetAll()
         {
             this.Query = "Select * from Parent";
-            base.GetQuery();
+            base.GetAll();
         }
 
 
-        public override void Insert()
+        public override void Create()
         {
             this.Query = $"insert into Parent (Name, Type) values ('{this.Name}','{this.Type}')";
-            base.Insert();
+            base.Create();
         }
     }
 
     public class Menu_Model : DatabaseContext
     {
-        public override void GetQuery()
+        public override void GetAll()
         {
             this.Query = "Select * from Menu";
-            base.GetQuery();
+            base.GetAll();
         }
     }
 

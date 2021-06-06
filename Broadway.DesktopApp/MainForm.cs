@@ -27,20 +27,20 @@ namespace Broadway.DesktopApp
         {
             //student load and display
             Student_Model s1 = new Student_Model();
-            s1.GetQuery();
+            s1.GetAll();
 
             grdStudent.DataSource = s1.Table;
             grdStudent.Refresh();
 
             //Parent load and display
             Parent_Model p1 = new Parent_Model();
-            p1.GetQuery();
+            p1.GetAll();
 
             grdParent.DataSource = p1.Table;
             grdParent.Refresh();
             //Menu load and display
             Menu_Model m1 = new Menu_Model();
-            m1.GetQuery();
+            m1.GetAll();
 
             grdMenu.DataSource = m1.Table;
             grdMenu.Refresh();
@@ -52,7 +52,7 @@ namespace Broadway.DesktopApp
             {
                 Student_Model s1 = new Student_Model();
                 s1.Name = textBox1.Text;
-                s1.Insert();
+                s1.Create();
 
                 textBox1.Text = "";
                 LoadData();
@@ -76,7 +76,7 @@ namespace Broadway.DesktopApp
             Parent_Model p1 = new Parent_Model();
             p1.Name = textBox2.Text;
             p1.Type = comboBox2.SelectedItem.ToString() == "Father" ? 0 : 1;
-            p1.Insert();
+            p1.Create();
             textBox2.Text = "";
             comboBox2.SelectedItem = null;
 
