@@ -9,7 +9,9 @@
         <EntityTypeShape EntityType="BwNs.Parent" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BwNs.Student" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BwNs.SP" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BwNs.test" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BwNs.test" Width="1.5" PointX="4.5" PointY="0.75" />
+        <EntityTypeShape EntityType="BwNs.sp_data" Width="1.5" PointX="5.125" PointY="3.25" />
+        <EntityTypeShape EntityType="BwNs.studentParent" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

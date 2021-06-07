@@ -74,5 +74,13 @@ namespace Broadway.DesktopApp.Services
             }
             return true;
         }
+
+
+        public List<SP_Menu_create_Result> CreateMenuByStoredProc(string Name, int? id)
+        {
+            var result= db.SP_Menu_create(Name, id);
+            
+            return result.ToList();
+        }
     }
 }

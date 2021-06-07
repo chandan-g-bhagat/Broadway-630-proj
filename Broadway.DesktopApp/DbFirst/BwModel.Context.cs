@@ -12,6 +12,8 @@ namespace Broadway.DesktopApp.DbFirst
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class BwEntities : DbContext
     {
@@ -30,5 +32,20 @@ namespace Broadway.DesktopApp.DbFirst
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<SP> SPs { get; set; }
         public virtual DbSet<test> tests { get; set; }
+        public virtual DbSet<sp_data> sp_data { get; set; }
+        public virtual DbSet<studentParent> studentParents { get; set; }
+    
+        public virtual ObjectResult<SP_Menu_create_Result> SP_Menu_create(string name_Param, Nullable<int> id_param)
+        {
+            var name_ParamParameter = name_Param != null ?
+                new ObjectParameter("name_Param", name_Param) :
+                new ObjectParameter("name_Param", typeof(string));
+    
+            var id_paramParameter = id_param.HasValue ?
+                new ObjectParameter("id_param", id_param) :
+                new ObjectParameter("id_param", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Menu_create_Result>("SP_Menu_create", name_ParamParameter, id_paramParameter);
+        }
     }
 }

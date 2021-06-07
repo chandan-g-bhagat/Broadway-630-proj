@@ -49,6 +49,36 @@ warning 6002: The table/view 'BW_630.dbo.SP' does not have a primary key defined
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BW_630.dbo.sp_data' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="sp_data">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Student" />
+            <PropertyRef Name="FatherName" />
+            <PropertyRef Name="MotherName" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Student" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MotherName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BW_630.dbo.studentParent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="studentParent">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentId" Type="uniqueidentifier" />
+          <Property Name="ParentName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="SP_Menu_create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name_Param" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_param" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="BwNsStoreContainer">
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parent" EntityType="Self.Parent" Schema="dbo" store:Type="Tables" />
@@ -60,6 +90,22 @@ warning 6002: The table/view 'BW_630.dbo.SP' does not have a primary key defined
     [SP].[ParentId] AS [ParentId], 
     [SP].[StudentId] AS [StudentId]
     FROM [dbo].[SP] AS [SP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sp_data" EntityType="Self.sp_data" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [sp_data].[id] AS [id], 
+    [sp_data].[Student] AS [Student], 
+    [sp_data].[FatherName] AS [FatherName], 
+    [sp_data].[MotherName] AS [MotherName]
+    FROM [dbo].[sp_data] AS [sp_data]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="studentParent" EntityType="Self.studentParent" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [studentParent].[Id] AS [Id], 
+    [studentParent].[Name] AS [Name], 
+    [studentParent].[ParentId] AS [ParentId], 
+    [studentParent].[ParentName] AS [ParentName]
+    FROM [dbo].[studentParent] AS [studentParent]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -106,6 +152,12 @@ warning 6002: The table/view 'BW_630.dbo.SP' does not have a primary key defined
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="SPs" EntityType="Self.SP" />
           <EntitySet Name="tests" EntityType="BwNs.test" />
+          <EntitySet Name="sp_data" EntityType="BwNs.sp_data" />
+          <EntitySet Name="studentParents" EntityType="BwNs.studentParent" />
+          <FunctionImport Name="SP_Menu_create" ReturnType="Collection(BwNs.SP_Menu_create_Result)">
+            <Parameter Name="name_Param" Mode="In" Type="String" />
+            <Parameter Name="id_param" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="test">
           <Key>
@@ -115,6 +167,34 @@ warning 6002: The table/view 'BW_630.dbo.SP' does not have a primary key defined
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="sp_data">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Student" />
+            <PropertyRef Name="FatherName" />
+            <PropertyRef Name="MotherName" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Student" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MotherName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="studentParent">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Guid" />
+          <Property Name="ParentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="SP_Menu_create_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="MenuName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MenuUrl" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ParentId" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -168,6 +248,36 @@ warning 6002: The table/view 'BW_630.dbo.SP' does not have a primary key defined
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sp_data">
+            <EntityTypeMapping TypeName="BwNs.sp_data">
+              <MappingFragment StoreEntitySet="sp_data">
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Student" ColumnName="Student" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="studentParents">
+            <EntityTypeMapping TypeName="BwNs.studentParent">
+              <MappingFragment StoreEntitySet="studentParent">
+                <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_Menu_create" FunctionName="BwNs.Store.SP_Menu_create">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BwNs.SP_Menu_create_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="MenuUrl" ColumnName="MenuUrl" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

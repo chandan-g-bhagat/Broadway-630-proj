@@ -97,7 +97,16 @@
     <Compile Include="DbFirst\SP.cs">
       <DependentUpon>BwModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DbFirst\sp_data.cs">
+      <DependentUpon>BwModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbFirst\SP_Menu_create_Result.cs">
+      <DependentUpon>BwModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DbFirst\Student.cs">
+      <DependentUpon>BwModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbFirst\studentParent.cs">
       <DependentUpon>BwModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DbFirst\test.cs">
