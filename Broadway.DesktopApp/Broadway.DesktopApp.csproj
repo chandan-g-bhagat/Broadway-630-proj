@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeFirst\CodeFirstContext.cs" />
     <Compile Include="Data\DatabaseContext.cs" />
     <Compile Include="Data\SQLImpl.cs" />
     <Compile Include="DbFirst\BwModel.Context.cs">
@@ -130,8 +131,47 @@
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106070133103_initial.cs" />
+    <Compile Include="Migrations\202106070133103_initial.Designer.cs">
+      <DependentUpon>202106070133103_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106070137382_rquiredName.cs" />
+    <Compile Include="Migrations\202106070137382_rquiredName.Designer.cs">
+      <DependentUpon>202106070137382_rquiredName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106070141044_maxlength50.cs" />
+    <Compile Include="Migrations\202106070141044_maxlength50.Designer.cs">
+      <DependentUpon>202106070141044_maxlength50.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106070143266_fieldsadded.cs" />
+    <Compile Include="Migrations\202106070143266_fieldsadded.Designer.cs">
+      <DependentUpon>202106070143266_fieldsadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106070153176_deletedUser.cs" />
+    <Compile Include="Migrations\202106070153176_deletedUser.Designer.cs">
+      <DependentUpon>202106070153176_deletedUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106070155433_usertableadded.cs" />
+    <Compile Include="Migrations\202106070155433_usertableadded.Designer.cs">
+      <DependentUpon>202106070155433_usertableadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106070157543_usertableremoved.cs" />
+    <Compile Include="Migrations\202106070157543_usertableremoved.Designer.cs">
+      <DependentUpon>202106070157543_usertableremoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106070158223_usertableadded1.cs" />
+    <Compile Include="Migrations\202106070158223_usertableadded1.Designer.cs">
+      <DependentUpon>202106070158223_usertableadded1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106070203231_foreignKeyAdded.cs" />
+    <Compile Include="Migrations\202106070203231_foreignKeyAdded.Designer.cs">
+      <DependentUpon>202106070203231_foreignKeyAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\CustomerDetails.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\MenuService.cs" />
     <Compile Include="Services\StudentService.cs" />
     <Compile Include="StudentForm.cs">
@@ -148,6 +188,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070133103_initial.resx">
+      <DependentUpon>202106070133103_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070137382_rquiredName.resx">
+      <DependentUpon>202106070137382_rquiredName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070141044_maxlength50.resx">
+      <DependentUpon>202106070141044_maxlength50.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070143266_fieldsadded.resx">
+      <DependentUpon>202106070143266_fieldsadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070153176_deletedUser.resx">
+      <DependentUpon>202106070153176_deletedUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070155433_usertableadded.resx">
+      <DependentUpon>202106070155433_usertableadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070157543_usertableremoved.resx">
+      <DependentUpon>202106070157543_usertableremoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070158223_usertableadded1.resx">
+      <DependentUpon>202106070158223_usertableadded1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106070203231_foreignKeyAdded.resx">
+      <DependentUpon>202106070203231_foreignKeyAdded.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
