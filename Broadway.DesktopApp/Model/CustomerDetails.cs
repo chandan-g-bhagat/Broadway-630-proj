@@ -38,4 +38,15 @@ namespace Broadway.DesktopApp.Model
         [Column("EmailAddress", Order =1)]
         public string Email { get; set; }
     }
+
+
+    public class CustomerUserModel
+    {
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Phone {get;set;}
+        public string UserName {get;set;}
+        public string Password {get;set;}
+        public string Email {get;set;}
+    }
 }

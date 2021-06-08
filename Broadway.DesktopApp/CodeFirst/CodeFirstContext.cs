@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Broadway.DesktopApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -16,5 +17,14 @@ namespace Broadway.DesktopApp.CodeFirst
 
         public virtual DbSet<Model.CustomerDetails> Customer { get; set; }
         public virtual DbSet<Model.UserDetails> Users { get; set; }
+
+      
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+         
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
