@@ -130,7 +130,16 @@
     <Compile Include="Migrations\202106110137442_userTableAdded.designer.cs">
       <DependentUpon>202106110137442_userTableAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106130147198_studentAdded.cs" />
+    <Compile Include="Migrations\202106130147198_studentAdded.designer.cs">
+      <DependentUpon>202106130147198_studentAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106130151383_foreignKeyImplemented.cs" />
+    <Compile Include="Migrations\202106130151383_foreignKeyImplemented.designer.cs">
+      <DependentUpon>202106130151383_foreignKeyImplemented.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +149,12 @@
     </Compile>
     <Compile Include="UI\Admin\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\StudentCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\StudentCreateForm.Designer.cs">
+      <DependentUpon>StudentCreateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Student\StudentDashboard.cs">
       <SubType>Form</SubType>
@@ -160,6 +175,12 @@
     <EmbeddedResource Include="Migrations\202106110137442_userTableAdded.resx">
       <DependentUpon>202106110137442_userTableAdded.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106130147198_studentAdded.resx">
+      <DependentUpon>202106130147198_studentAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106130151383_foreignKeyImplemented.resx">
+      <DependentUpon>202106130151383_foreignKeyImplemented.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -171,6 +192,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin\StudentCreateForm.resx">
+      <DependentUpon>StudentCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Student\StudentDashboard.resx">
       <DependentUpon>StudentDashboard.cs</DependentUpon>

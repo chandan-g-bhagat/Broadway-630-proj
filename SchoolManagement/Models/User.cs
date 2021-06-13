@@ -18,5 +18,7 @@ namespace SchoolManagement.Models
         public string PasswordHashed { get; set; }
         public bool IsActive { get; set; }
         public UserType UserType { get; set; }
+
+        public virtual ICollection<Student> Student { get; set; }
     }
 }

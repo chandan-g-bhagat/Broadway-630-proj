@@ -117,7 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAOVZ227jNhB9L9B/EPTUAlkzlxZoA3kXXifZGl0nwTq7rwUtjR2iFKklqdT+tj70k/oLHVoSJdOyYsdJ0KIIEFjUzOFcDocz9t9//hW9W6Q8eAClmRT98KR3HAYgYpkwMe+HuZm9+Sl89/bbb6LLJF0EXyq5MyuHmkL3w3tjsnNCdHwPKdW9lMVKajkzvVimhCaSnB4f/0xOTgggRIhYQRB9yoVhKawe8HEoRQyZySkfywS4LtfxzWSFGlzTFHRGY+iHuCIlH1NB55CCML0LamgYDDijaMwE+CwMqBDSUIOmnn/WMDFKivkkwwXK75YZoNyMcg2lC+e1+K7eHJ9ab0itWEHFuTYy3RPw5KwMD/HVnxTk0IUPA3iJgTZL6/UqiBghkycYtjDw9zofcmXlWkJcZKVXqh4FvsCRYwYSyP4dBcOcm1xBX0BuFOVHwW0+5Sz+FZZ38ncQfZFz3jQUTcV3awu4dKtkBsosP8GsNH+UhAFZ1yO+olNr6BSefcgZfr7GvemUg6MB6VS3/ysA5BKejDAY08VHEHNz3w/xYxhcsQUk1UqJ+lkwPEioZFT+6CaDJFGg9Yvvc5lSxp95l4jULOvkHh5G9RTiWb3/G+usz6/CvFuq9R9SJb9QfQ/Ji2830oPYsAfn13vMKVDxpPhYBGcwVv5evdiJtp2weerRtUAb6StO5/W9sQeFhzJNpXCWPR+NMewJKL7ENBVbj4Q5O/XYPYZ0Cqr05wMIQLgw+EJ5js8nGzFeE3c3RSl+2i1+BxRvJ+XEz7rFb6lqgv/QLT1IUiac8I+b6SwSt1l9sLUwlAkHdAEzitG1y7BouwUxUWUydUnodbMK2AmY9Shh5a45VbLRBZB0Q1hutOkX5bKNuM6rulMiRatUtVRkS08VjWmWIWUaPVa5EkyKBmv4ZrJ/25EWGCTWLd2Hs9btZKRC9ntvcWu09IopbWxPN6X2pA2TdEPMy+GW4FabeWnyi30d9UrBfi6V2npNl1YPqY7kFTpnxVd+gjOoPlEbmqtOl3KqWu6QoeR5KrbdQ13axfXR1C9WdkdwXUkTxC3ujlN2HU2UcmkTIyJeGP2MkY2UeTezT4GdCFIcwsPZsTq0+1OjXe1leFG3Fk2MenV3JL93aOL573ZHrVuENR/d6n6eFje472mx+srs2yjfvojb3ZVxr1xHZel8fE7eqKWFSBhgiB5YYuvoZKkNpGVR+8qHnK1uq0oAmc1moE3Rc4Q4p556c/a/Z+YlWid8t8H31dv/XLCvOTC7OZsxe6UfMICKB6rie6q+S+ni+ybSE4bMg7DWBsk9kPYbFv97yfLntoOC3D6bHQTpz19TZg6evZh4DKM7636TvtkH7tSDd7XgRfXrh8lUotWFnXXrvkODvrU/b0O2b34biZl8cvu+Wecj0vzWNLoAzeY1hP0OVUBsC2gNWslYS6oUoldNiyoRL8NjMDTB4A8UHgMaG3wdY+VYfSVQDmGXOJ4lI3GTmyw3A61xXOPLpr8R6d5/NaOs2xzdZPZJP4cLaCZDF+BGvM8ZT5zdVy3s3AJheVgMzdaqCc7iBuZLh3QtxY5AZfguIANhKXcHacYRTN+ICbVncX/bkGIfYU7jZXVdbwd5PBHrYY8uGJ0rmuoSo9a3vwQQ+1PA238APDudgDwYAAA=</value>
+  </data>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
+  </data>
 </root>

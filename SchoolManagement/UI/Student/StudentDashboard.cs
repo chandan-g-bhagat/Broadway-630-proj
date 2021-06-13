@@ -1,4 +1,5 @@
-﻿using SchoolManagement.ViewModel;
+﻿using SchoolManagement.Data;
+using SchoolManagement.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,13 @@ namespace SchoolManagement.UI.Student
     public partial class StudentDashboard : Form
     {
         private LoginResponseViewModel loginModel { get; set; }
+
+        private DefaultContext db = new DefaultContext();
         public StudentDashboard(LoginResponseViewModel model)
         {
             this.loginModel = model;
             InitializeComponent();
+            var userDetails = db.Users.Find(loginModel.UserId);
             label1.Text = "Welcome " + loginModel.UserName;
         }
     }

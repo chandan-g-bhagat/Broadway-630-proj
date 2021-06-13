@@ -71,6 +71,7 @@ namespace SchoolManagement
                     case Common.UserType.Parent:
                         break;
                     case Common.UserType.Admin:
+                        
                         AdminDashboard admin = new AdminDashboard(result);
                         admin.Show();
                         break;

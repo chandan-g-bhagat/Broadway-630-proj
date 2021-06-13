@@ -61,6 +61,7 @@ namespace SchoolManagement
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(295, 30);
             this.txtUserName.TabIndex = 1;
+            this.txtUserName.Text = "admin";
             // 
             // txtPassword
             // 
@@ -69,6 +70,7 @@ namespace SchoolManagement
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(295, 30);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "Admin@123";
             // 
             // btnClear
             // 
