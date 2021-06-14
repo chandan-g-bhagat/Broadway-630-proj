@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SchoolManagement.ViewModel;
+using SchoolManagement.Models;
 
 namespace SchoolManagement.Services
 {
@@ -45,6 +46,65 @@ namespace SchoolManagement.Services
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Creates the student and its respective user
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static StudentCreateResponseViewModel CreateStudentUser(StudentCreateViewModel model)
+        {
+            var result = new StudentCreateResponseViewModel();
+            try
+            {
+                //splitting the incoming model into 2 models that reflects the database table
+                var user = new User() {
+                    Id = Guid.NewGuid(),
+                    IsActive = true,
+                    PasswordHashed = model.HashedPassword,
+                    UserName = model.Username,
+                    UserType = Common.UserType.Student
+                };
+                db.Users.Add(user);
+
+                var student = new Student() {
+                    Id = Guid.NewGuid(),
+                    Address = model.Address,
+                    Email = model.Email,
+                    Name = model.Name,
+                    UserId = user.Id
+                };
+                db.Students.Add(student);
+
+                db.SaveChanges();
+
+                result.Status = true;
+                result.Message = "Student added successfully";
+                result.StudentUserId = user.Id;
+                result.StudentId = student.Id;
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+            }
+
+            return result;
+        }
+
+        public static IEnumerable<AdminStudentListViewModel> GetAllStudents()
+        {
+            var data = db.Students.Select(p => new AdminStudentListViewModel
+            {
+                StudentId = p.Id,
+                Address = p.Address,
+                Email = p.Email,
+                Name = p.Name,
+                Username = p.StudentUser.UserName
+
+            }) ;
+
+            return data.AsEnumerable();
         }
     }
 }

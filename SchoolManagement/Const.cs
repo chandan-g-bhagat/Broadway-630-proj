@@ -18,6 +18,7 @@ namespace SchoolManagement
             public const string Login = "Login to {0}";
             public const string FailedLogin = "Login Failed! Please try once more";
             public const string ErrorOccured = "Some Error Occured";
+            public const string WrongPasswordPrompt = "Password and confirm password does not match!";
 
         }
 

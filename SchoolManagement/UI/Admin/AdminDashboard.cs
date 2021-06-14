@@ -18,7 +18,7 @@ namespace SchoolManagement.UI.Admin
         {
             this.loginModel = model;
             InitializeComponent();
-            label1.Text = "Welcome " + loginModel.UserName + " "+ loginModel.UserId;
+            this.Text = "Welcome " + loginModel.UserName ;
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)
