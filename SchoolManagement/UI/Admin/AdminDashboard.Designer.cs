@@ -33,6 +33,19 @@ namespace SchoolManagement.UI.Admin
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.examsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.classesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignClassTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,10 +61,14 @@ namespace SchoolManagement.UI.Admin
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentToolStripMenuItem});
+            this.studentToolStripMenuItem,
+            this.teacherToolStripMenuItem,
+            this.examsToolStripMenuItem,
+            this.subjectToolStripMenuItem,
+            this.classesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1139, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1424, 38);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,6 +86,100 @@ namespace SchoolManagement.UI.Admin
             this.createToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
+            // 
+            // teacherToolStripMenuItem
+            // 
+            this.teacherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem1});
+            this.teacherToolStripMenuItem.Name = "teacherToolStripMenuItem";
+            this.teacherToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.teacherToolStripMenuItem.Text = "Teacher";
+            // 
+            // createToolStripMenuItem1
+            // 
+            this.createToolStripMenuItem1.Name = "createToolStripMenuItem1";
+            this.createToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.createToolStripMenuItem1.Text = "Create";
+            this.createToolStripMenuItem1.Click += new System.EventHandler(this.createToolStripMenuItem1_Click);
+            // 
+            // examsToolStripMenuItem
+            // 
+            this.examsToolStripMenuItem.Name = "examsToolStripMenuItem";
+            this.examsToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.examsToolStripMenuItem.Text = "Exams";
+            // 
+            // subjectToolStripMenuItem
+            // 
+            this.subjectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem2,
+            this.manageToolStripMenuItem});
+            this.subjectToolStripMenuItem.Name = "subjectToolStripMenuItem";
+            this.subjectToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.subjectToolStripMenuItem.Text = "Subject";
+            // 
+            // createToolStripMenuItem2
+            // 
+            this.createToolStripMenuItem2.Name = "createToolStripMenuItem2";
+            this.createToolStripMenuItem2.Size = new System.Drawing.Size(146, 26);
+            this.createToolStripMenuItem2.Text = "Create";
+            // 
+            // manageToolStripMenuItem
+            // 
+            this.manageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.assignTeacherToolStripMenuItem,
+            this.assignClassToolStripMenuItem});
+            this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
+            this.manageToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.manageToolStripMenuItem.Text = "Manage";
+            // 
+            // assignTeacherToolStripMenuItem
+            // 
+            this.assignTeacherToolStripMenuItem.Name = "assignTeacherToolStripMenuItem";
+            this.assignTeacherToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.assignTeacherToolStripMenuItem.Text = "Assign Teacher";
+            // 
+            // assignClassToolStripMenuItem
+            // 
+            this.assignClassToolStripMenuItem.Name = "assignClassToolStripMenuItem";
+            this.assignClassToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.assignClassToolStripMenuItem.Text = "Assign Class";
+            // 
+            // classesToolStripMenuItem
+            // 
+            this.classesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem3,
+            this.manageToolStripMenuItem1});
+            this.classesToolStripMenuItem.Name = "classesToolStripMenuItem";
+            this.classesToolStripMenuItem.Size = new System.Drawing.Size(56, 34);
+            this.classesToolStripMenuItem.Text = "Class";
+            // 
+            // createToolStripMenuItem3
+            // 
+            this.createToolStripMenuItem3.Name = "createToolStripMenuItem3";
+            this.createToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.createToolStripMenuItem3.Text = "Create";
+            this.createToolStripMenuItem3.Click += new System.EventHandler(this.createToolStripMenuItem3_Click);
+            // 
+            // manageToolStripMenuItem1
+            // 
+            this.manageToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.assignStudentsToolStripMenuItem,
+            this.assignClassTeacherToolStripMenuItem});
+            this.manageToolStripMenuItem1.Name = "manageToolStripMenuItem1";
+            this.manageToolStripMenuItem1.Size = new System.Drawing.Size(146, 26);
+            this.manageToolStripMenuItem1.Text = "Manage";
+            // 
+            // assignStudentsToolStripMenuItem
+            // 
+            this.assignStudentsToolStripMenuItem.Name = "assignStudentsToolStripMenuItem";
+            this.assignStudentsToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.assignStudentsToolStripMenuItem.Text = "Assign Students";
+            // 
+            // assignClassTeacherToolStripMenuItem
+            // 
+            this.assignClassTeacherToolStripMenuItem.Name = "assignClassTeacherToolStripMenuItem";
+            this.assignClassTeacherToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.assignClassTeacherToolStripMenuItem.Text = "Assign Class Teacher";
             // 
             // AdminDashboard
             // 
@@ -95,5 +206,18 @@ namespace SchoolManagement.UI.Admin
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem studentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem teacherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem examsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem classesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assignTeacherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assignClassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem assignStudentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assignClassTeacherToolStripMenuItem;
     }
 }

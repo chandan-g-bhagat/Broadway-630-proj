@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagement.Models
 {
-    public class Student
+    public class Teacher
     {
         [Key]
         public Guid Id { get; set; }
@@ -17,12 +17,8 @@ namespace SchoolManagement.Models
         public string Address { get; set; }
         public string Email { get; set; }
         public Guid? UserId { get; set; }
-        public Guid? ClassId { get; set; }
 
         [ForeignKey("UserId")]
-        public virtual User StudentUser { get; set; }
-
-        [ForeignKey("ClassId")]
-        public virtual Classes Classes { get; set; }
+        public virtual User TeacherUser { get; set; }
     }
 }

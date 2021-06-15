@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagement.ViewModel
 {
-    public class StudentCreateViewModel : AdminStudentListViewModel
+    public class TeacherCreateViewModel : AdminTeacherListViewModel
     {
         public string Password { get; set; }
 
@@ -19,9 +19,9 @@ namespace SchoolManagement.ViewModel
         }
     }
 
-    public class AdminStudentListViewModel
+    public class AdminTeacherListViewModel
     {
-        public Guid StudentId { get; set; }
+        public Guid TeacherId { get; set; }
 
         public string Name { get; set; }
         public string Address { get; set; }
@@ -30,9 +30,9 @@ namespace SchoolManagement.ViewModel
         public string Email { get; set; }
     }
 
-    public class StudentCreateResponseViewModel : ResponseViewModel
+    public class TeacherCreateResponseViewModel : ResponseViewModel
     {
         public Guid StudentId { get; set; }
-        public Guid StudentUserId { get; set; }
+        public Guid TeacherUserId { get; set; }
     }
 }

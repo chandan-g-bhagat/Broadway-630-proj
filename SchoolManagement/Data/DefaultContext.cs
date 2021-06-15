@@ -12,10 +12,11 @@ namespace SchoolManagement.Data
     {
         public DefaultContext() : base("name=Default")
         {
-
         }
 
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Teacher> Teachers { get; set; }
+        public virtual DbSet<Classes> Classes { get; set; }
     }
 }

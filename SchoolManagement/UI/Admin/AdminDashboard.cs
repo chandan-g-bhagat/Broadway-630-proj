@@ -14,16 +14,16 @@ namespace SchoolManagement.UI.Admin
     public partial class AdminDashboard : Form
     {
         private LoginResponseViewModel loginModel { get; set; }
+
         public AdminDashboard(LoginResponseViewModel model)
         {
             this.loginModel = model;
             InitializeComponent();
-            this.Text = "Welcome " + loginModel.UserName ;
+            this.Text = "Welcome " + loginModel.UserName;
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
-
         }
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,6 +31,20 @@ namespace SchoolManagement.UI.Admin
             StudentCreateForm sc = new StudentCreateForm();
             sc.MdiParent = this;
             sc.Show();
+        }
+
+        private void createToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TeacherForms tf = new TeacherForms();
+            tf.MdiParent = this;
+            tf.Show();
+        }
+
+        private void createToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            ClassForm cf = new ClassForm();
+            cf.MdiParent = this;
+            cf.Show();
         }
     }
 }

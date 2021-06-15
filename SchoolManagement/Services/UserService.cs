@@ -42,7 +42,6 @@ namespace SchoolManagement.Services
             catch (Exception ex)
             {
                 result.Message = ex.Message;
-                
             }
 
             return result;
@@ -59,7 +58,8 @@ namespace SchoolManagement.Services
             try
             {
                 //splitting the incoming model into 2 models that reflects the database table
-                var user = new User() {
+                var user = new User()
+                {
                     Id = Guid.NewGuid(),
                     IsActive = true,
                     PasswordHashed = model.HashedPassword,
@@ -68,7 +68,8 @@ namespace SchoolManagement.Services
                 };
                 db.Users.Add(user);
 
-                var student = new Student() {
+                var student = new Student()
+                {
                     Id = Guid.NewGuid(),
                     Address = model.Address,
                     Email = model.Email,
@@ -101,8 +102,62 @@ namespace SchoolManagement.Services
                 Email = p.Email,
                 Name = p.Name,
                 Username = p.StudentUser.UserName
+            });
 
-            }) ;
+            return data.AsEnumerable();
+        }
+
+        public static TeacherCreateResponseViewModel CreateTeacherUser(TeacherCreateViewModel model)
+        {
+            var result = new TeacherCreateResponseViewModel();
+            try
+            {
+                //splitting the incoming model into 2 models that reflects the database table
+                var user = new User()
+                {
+                    Id = Guid.NewGuid(),
+                    IsActive = true,
+                    PasswordHashed = model.HashedPassword,
+                    UserName = model.Username,
+                    UserType = Common.UserType.Teacher
+                };
+                db.Users.Add(user);
+
+                var teacher = new Teacher()
+                {
+                    Id = Guid.NewGuid(),
+                    Address = model.Address,
+                    Email = model.Email,
+                    Name = model.Name,
+                    UserId = user.Id
+                };
+                db.Teachers.Add(teacher);
+
+                db.SaveChanges();
+
+                result.Status = true;
+                result.Message = "Teacher added successfully";
+                result.TeacherUserId = user.Id;
+                result.StudentId = teacher.Id;
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+            }
+
+            return result;
+        }
+
+        public static IEnumerable<AdminTeacherListViewModel> GetAllTeachers()
+        {
+            var data = db.Teachers.Select(p => new AdminTeacherListViewModel
+            {
+                TeacherId = p.Id,
+                Address = p.Address,
+                Email = p.Email,
+                Name = p.Name,
+                Username = p.TeacherUser.UserName
+            });
 
             return data.AsEnumerable();
         }

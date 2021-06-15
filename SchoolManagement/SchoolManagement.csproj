@@ -138,11 +138,28 @@
     <Compile Include="Migrations\202106130151383_foreignKeyImplemented.designer.cs">
       <DependentUpon>202106130151383_foreignKeyImplemented.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106150111040_techersModelAdded.cs" />
+    <Compile Include="Migrations\202106150111040_techersModelAdded.designer.cs">
+      <DependentUpon>202106150111040_techersModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106150136016_subjectsAdded.cs" />
+    <Compile Include="Migrations\202106150136016_subjectsAdded.designer.cs">
+      <DependentUpon>202106150136016_subjectsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106150213572_update.cs" />
+    <Compile Include="Migrations\202106150213572_update.designer.cs">
+      <DependentUpon>202106150213572_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Classes.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ClassService.cs" />
+    <Compile Include="Services\TeacherService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="UI\Admin\AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -150,11 +167,23 @@
     <Compile Include="UI\Admin\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Admin\ClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\ClassForm.Designer.cs">
+      <DependentUpon>ClassForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Admin\StudentCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Admin\StudentCreateForm.Designer.cs">
       <DependentUpon>StudentCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\TeacherForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\TeacherForms.Designer.cs">
+      <DependentUpon>TeacherForms.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Student\StudentDashboard.cs">
       <SubType>Form</SubType>
@@ -168,8 +197,11 @@
     <Compile Include="UI\Teacher\TeacherDashboard.Designer.cs">
       <DependentUpon>TeacherDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ClassCreateViewModel.cs" />
     <Compile Include="ViewModel\LoginRequestViewModel.cs" />
     <Compile Include="ViewModel\StudentCreateViewModel.cs" />
+    <Compile Include="ViewModel\TeacherCreateViewModel.cs" />
+    <Compile Include="ViewModel\UnAssignedClassTeacherViewModel.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +213,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106130151383_foreignKeyImplemented.resx">
       <DependentUpon>202106130151383_foreignKeyImplemented.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106150111040_techersModelAdded.resx">
+      <DependentUpon>202106150111040_techersModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106150136016_subjectsAdded.resx">
+      <DependentUpon>202106150136016_subjectsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106150213572_update.resx">
+      <DependentUpon>202106150213572_update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,8 +235,14 @@
     <EmbeddedResource Include="UI\Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin\ClassForm.resx">
+      <DependentUpon>ClassForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Admin\StudentCreateForm.resx">
       <DependentUpon>StudentCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin\TeacherForms.resx">
+      <DependentUpon>TeacherForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Student\StudentDashboard.resx">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
