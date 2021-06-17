@@ -18,5 +18,6 @@ namespace SchoolManagement.Data
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Classes> Classes { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
     }
 }

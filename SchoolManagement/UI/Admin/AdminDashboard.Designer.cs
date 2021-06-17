@@ -68,7 +68,7 @@ namespace SchoolManagement.UI.Admin
             this.classesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1424, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1139, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,7 +83,7 @@ namespace SchoolManagement.UI.Admin
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
@@ -98,7 +98,7 @@ namespace SchoolManagement.UI.Admin
             // createToolStripMenuItem1
             // 
             this.createToolStripMenuItem1.Name = "createToolStripMenuItem1";
-            this.createToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.createToolStripMenuItem1.Size = new System.Drawing.Size(135, 26);
             this.createToolStripMenuItem1.Text = "Create";
             this.createToolStripMenuItem1.Click += new System.EventHandler(this.createToolStripMenuItem1_Click);
             // 
@@ -120,8 +120,9 @@ namespace SchoolManagement.UI.Admin
             // createToolStripMenuItem2
             // 
             this.createToolStripMenuItem2.Name = "createToolStripMenuItem2";
-            this.createToolStripMenuItem2.Size = new System.Drawing.Size(146, 26);
+            this.createToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.createToolStripMenuItem2.Text = "Create";
+            this.createToolStripMenuItem2.Click += new System.EventHandler(this.createToolStripMenuItem2_Click);
             // 
             // manageToolStripMenuItem
             // 
@@ -129,7 +130,7 @@ namespace SchoolManagement.UI.Admin
             this.assignTeacherToolStripMenuItem,
             this.assignClassToolStripMenuItem});
             this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
-            this.manageToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.manageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.manageToolStripMenuItem.Text = "Manage";
             // 
             // assignTeacherToolStripMenuItem
@@ -150,7 +151,7 @@ namespace SchoolManagement.UI.Admin
             this.createToolStripMenuItem3,
             this.manageToolStripMenuItem1});
             this.classesToolStripMenuItem.Name = "classesToolStripMenuItem";
-            this.classesToolStripMenuItem.Size = new System.Drawing.Size(56, 34);
+            this.classesToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.classesToolStripMenuItem.Text = "Class";
             // 
             // createToolStripMenuItem3
@@ -166,7 +167,7 @@ namespace SchoolManagement.UI.Admin
             this.assignStudentsToolStripMenuItem,
             this.assignClassTeacherToolStripMenuItem});
             this.manageToolStripMenuItem1.Name = "manageToolStripMenuItem1";
-            this.manageToolStripMenuItem1.Size = new System.Drawing.Size(146, 26);
+            this.manageToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.manageToolStripMenuItem1.Text = "Manage";
             // 
             // assignStudentsToolStripMenuItem

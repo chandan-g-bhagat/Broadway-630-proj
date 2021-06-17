@@ -46,5 +46,12 @@ namespace SchoolManagement.UI.Admin
             cf.MdiParent = this;
             cf.Show();
         }
+
+        private void createToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SubjectForm sf = new SubjectForm();
+            sf.MdiParent = this;
+            sf.Show();
+        }
     }
 }

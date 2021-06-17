@@ -29,15 +29,13 @@ namespace SchoolManagement.UI.Admin
             MessageBox.Show(value + " " + Key);
         }
 
-        private Dictionary<string, string> test = new Dictionary<string, string>();
-
         private void LoadComboBox()
         {
-            test = TeacherService.GetAllUnAssignedTeachers();
+            var teacherList = TeacherService.GetAllUnAssignedTeachers();
 
-            if (test.Count != 0)
+            if (teacherList.Count != 0)
             {
-                cmbTeacher.DataSource = new BindingSource(test, null);
+                cmbTeacher.DataSource = new BindingSource(teacherList, null);
                 cmbTeacher.DisplayMember = "Value";
                 cmbTeacher.ValueMember = "Key";
             }

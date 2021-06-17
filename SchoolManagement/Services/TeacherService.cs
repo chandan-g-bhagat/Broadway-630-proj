@@ -32,5 +32,11 @@ namespace SchoolManagement.Services
 
             return dict;
         }
+
+        public static Dictionary<string, string> GetAllTeachersDictionary()
+        {
+            var data = db.Teachers.ToDictionary(p => p.Id.ToString(), p => p.Name);
+            return data;
+        }
     }
 }
