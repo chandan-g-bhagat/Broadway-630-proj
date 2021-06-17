@@ -18,7 +18,26 @@ namespace SchoolManagement.UI.Admin
         {
             InitializeComponent();
             LoadComboBox();
+            LoadDta();
             cmbTeacher.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            dataGridView1.MouseClick += DataGridView1_MouseClick;
+        }
+
+        private void DataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
+            {
+                var classId = Guid.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                var students = StudentService.GetStudentsByClassId(classId);
+                dataGridView2.DataSource = students;
+                dataGridView2.Refresh();
+            }
+        }
+
+        private void LoadDta()
+        {
+            dataGridView1.DataSource = ClassService.GetAllClasses();
+            dataGridView1.Refresh();
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)

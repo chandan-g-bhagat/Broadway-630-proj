@@ -40,5 +40,7 @@ namespace SchoolManagement.Services
         }
 
         public static Dictionary<string, string> GetAllClassDictionary() => db.Classes.ToDictionary(p => p.Id.ToString(), p => p.Name);
+
+        public static List<Classes> GetAllClasses() => db.Classes.ToList();
     }
 }

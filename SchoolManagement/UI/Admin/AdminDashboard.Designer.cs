@@ -175,6 +175,7 @@ namespace SchoolManagement.UI.Admin
             this.assignStudentsToolStripMenuItem.Name = "assignStudentsToolStripMenuItem";
             this.assignStudentsToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.assignStudentsToolStripMenuItem.Text = "Assign Students";
+            this.assignStudentsToolStripMenuItem.Click += new System.EventHandler(this.assignStudentsToolStripMenuItem_Click);
             // 
             // assignClassTeacherToolStripMenuItem
             // 

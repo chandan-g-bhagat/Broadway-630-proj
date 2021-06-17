@@ -35,4 +35,10 @@ namespace SchoolManagement.ViewModel
         public Guid StudentId { get; set; }
         public Guid StudentUserId { get; set; }
     }
+
+    public class AssignedStudentViewModel
+    {
+        public string Name { get; set; }
+        public string Class { get; set; }
+    }
 }
