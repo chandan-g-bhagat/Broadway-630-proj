@@ -24,21 +24,23 @@ namespace SchoolManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             this.Text = string.Format(Const.Basic.Login, ConfigurationManager.AppSettings[Const.Appsettings.AppName].ToString());
 
-
 #if DEBUG
-           
+
 #endif
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Login();
+        }
+
+        private void Login()
         {
             if (string.IsNullOrWhiteSpace(txtUserName.Text))
             {
@@ -51,7 +53,8 @@ namespace SchoolManagement
                 return;
             }
 
-            var loginrequest = new LoginRequestViewModel() {
+            var loginrequest = new LoginRequestViewModel()
+            {
                 UserName = txtUserName.Text,
                 Password = txtPassword.Text
             };
@@ -60,21 +63,25 @@ namespace SchoolManagement
             {
                 switch (result.Type)
                 {
-                   case Common.UserType.Student:
+                    case Common.UserType.Student:
                         StudentDashboard student = new StudentDashboard(result);
                         student.Show();
                         break;
+
                     case Common.UserType.Teacher:
                         TeacherDashboard teacher = new TeacherDashboard(result);
                         teacher.Show();
                         break;
+
                     case Common.UserType.Parent:
                         break;
+
                     case Common.UserType.Admin:
-                        
+
                         AdminDashboard admin = new AdminDashboard(result);
                         admin.Show();
                         break;
+
                     default:
                         break;
                 }
@@ -83,6 +90,19 @@ namespace SchoolManagement
             else
             {
                 MessageBox.Show(result.Message);
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var key = e.KeyChar;
+           if (e.KeyChar == 13)
+            {
+                Login();
+            }
+            else if (e.KeyChar == 27)
+            {
+                txtPassword.Text = string.Empty;
             }
         }
     }

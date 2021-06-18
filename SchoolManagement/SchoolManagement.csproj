@@ -106,6 +106,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -203,6 +205,18 @@
     <Compile Include="UI\Admin\TeacherForms.Designer.cs">
       <DependentUpon>TeacherForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Student\MyInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Student\MyInformation.Designer.cs">
+      <DependentUpon>MyInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Student\StudentDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +229,13 @@
     <Compile Include="UI\Teacher\TeacherDashboard.Designer.cs">
       <DependentUpon>TeacherDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\ClassCreateViewModel.cs" />
     <Compile Include="ViewModel\LoginRequestViewModel.cs" />
     <Compile Include="ViewModel\StudentCreateViewModel.cs" />
@@ -272,11 +293,20 @@
     <EmbeddedResource Include="UI\Admin\TeacherForms.resx">
       <DependentUpon>TeacherForms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Student\MyInformation.resx">
+      <DependentUpon>MyInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Student\StudentDashboard.resx">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Teacher\TeacherDashboard.resx">
       <DependentUpon>TeacherDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

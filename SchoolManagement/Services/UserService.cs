@@ -161,5 +161,39 @@ namespace SchoolManagement.Services
 
             return data.AsEnumerable();
         }
+
+        public static ResponseViewModel ChangePassword(ChangePasswordViewModel model)
+        {
+            var result = new ResponseViewModel();
+            try
+            {
+                var user = db.Users.Find(model.Id);
+                if (user == null)
+                {
+                    result.Message = "User not found";
+                }
+                else
+                {
+                    if (user.PasswordHashed != model.HashedOldPassword)
+                    {
+                        result.Message = "Your old password did not match";
+                    }
+                    else
+                    {
+                        user.PasswordHashed = model.HashedNewPassword;
+                        db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+
+                        result.Status = true;
+                        result.Message = "Password changed successfully";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+            }
+            return result;
+        }
     }
 }

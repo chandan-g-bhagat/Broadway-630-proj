@@ -29,6 +29,7 @@ namespace SchoolManagement
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -71,6 +72,7 @@ namespace SchoolManagement
             this.txtPassword.Size = new System.Drawing.Size(295, 30);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Admin@123";
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // btnClear
             // 
@@ -84,11 +86,11 @@ namespace SchoolManagement
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(294, 152);
+            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
+            this.btnLogin.Location = new System.Drawing.Point(207, 143);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(161, 41);
+            this.btnLogin.Size = new System.Drawing.Size(237, 50);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -96,7 +98,7 @@ namespace SchoolManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 228);
+            this.ClientSize = new System.Drawing.Size(682, 228);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtPassword);
